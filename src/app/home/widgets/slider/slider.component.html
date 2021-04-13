@@ -1,0 +1,28 @@
+<owl-carousel-o [options]="HomeSliderConfig" class="home-slider" [ngClass]="class">
+	<ng-container *ngFor="let slider of homeContent">
+	  <ng-template  *ngFor="let image of slider.carousel_images" carouselSlide>
+	    <div class="home" [ngClass]="textClass"
+		[defaultImage]="'assets/images/product/placeholder.jpg'"
+         [lazyLoad]="image.carousel_image.src"
+		 >
+	      <div class="container">
+	        <div class="row">
+	          <div class="col">
+	            <div *ngFor="let content of image.content" class="slider-contain">
+	              <div>
+	                <h4>{{content.value.title}}</h4>
+	                <h1 [innerHTML]="content.value.text"></h1>
+	                <a [href]="[content.value.button_url]" 
+	                  
+	                   class="btn btn-solid" [ngClass]="buttonClass">
+	                   {{content.value.button_text}}
+	                </a>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </ng-template>
+	</ng-container>
+</owl-carousel-o>

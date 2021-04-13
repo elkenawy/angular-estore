@@ -1,0 +1,22 @@
+<owl-carousel-o [options]="BlogSliderConfig" class="no-arrow">
+  <ng-container *ngFor="let blog of blogs">
+    <ng-template carouselSlide>
+      <div class="col-md-12">
+        <a [routerLink]="['/pages/blog/details/', blog.meta.slug]">
+          <div class="classic-effect">
+            <img [src]="blog.image.src" class="img-fluid" alt="blog">
+            <span></span>
+          </div>
+        </a>
+        <div class="blog-details">
+          <h4>{{blog.date_published | date: 'd MMMM y'}}</h4>
+          <a [routerLink]="['/pages/blog/details/', blog.meta.slug]">
+            <p>{{blog.title}}</p>
+          </a>
+          <hr class="style1">
+          <h6> {{ 'by:' +blog.owner_name}} , {{ '2 Comment' }}</h6>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>

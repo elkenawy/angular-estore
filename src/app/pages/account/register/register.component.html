@@ -1,0 +1,40 @@
+<app-breadcrumb [title]="'Register'" [breadcrumb]="'Register'"></app-breadcrumb>
+<!-- section start -->
+<section class="register-page section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>create account</h3>
+                <div class="alert alert-danger" *ngIf="error">
+                <p>{{ error }}</p>
+                </div>
+                <div class="theme-card">
+                    <form  #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" class="theme-form" *ngIf="!loader">
+                        
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <label for="email">email</label>
+                                <input type="text" ngModel class="form-control" autocomplete="on" name="email" id="email" placeholder="Email" required>
+                            </div>
+                          
+                          
+                        </div>
+                         <div class="form-row">
+                             <div class="col-md-6">
+                                <label for="review">Password</label>
+                                <input type="password" ngModel class="form-control" autocomplete="on" id="review" placeholder="Enter your password" name="password1" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="review">conferime Password</label>
+                                <input type="password" ngModel class="form-control" autocomplete="on" id="review2" placeholder="Enter your password" name="password2" required>
+                            </div>
+                            <button class="btn btn-solid">create Account</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Section ends-->
