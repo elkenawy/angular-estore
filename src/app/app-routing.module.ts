@@ -26,10 +26,10 @@ const routes: Routes = [
     component: PagesComponent,
     loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
   },
-  {
-    path: 'elements',
-    component: ElementsComponent,
-    loadChildren: () => import('./elements/elements.module').then(m => m.ElementsModule) },
+  // {
+  //   path: 'elements',
+  //   component: ElementsComponent,
+  //   loadChildren: () => import('./elements/elements.module').then(m => m.ElementsModule) },
   {
     path: '**', // Navigate to Home Page if not found any page
     redirectTo: 'home/fashion',

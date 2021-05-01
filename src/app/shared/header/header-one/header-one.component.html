@@ -19,10 +19,12 @@
             <li class="mobile-wishlist">
               <a [routerLink]="['/shop/wishlist']"><i class="fa fa-heart" aria-hidden="true"></i>Wishlist</a>
             </li>
-            <li class="onhover-dropdown mobile-account">
+            
+            <li class="snipcart-customer-signin onhover-dropdown mobile-account">
               <i class="fa fa-user" aria-hidden="true"></i> My Account
-              <ul class="onhover-show-div">
+            <!-- <ul class="onhover-show-div">
                 <li>
+
                   <a *ngIf="!isAuthenticated" [routerLink]="['/login']" data-lng="en">
                     Login
                   </a>
@@ -32,9 +34,9 @@
                     Logout
                   </a>
                 </li>
-              </ul>
+              </ul> -->
             </li>
-          </ul>
+          </ul> 
         </div>
       </div>
     </div>

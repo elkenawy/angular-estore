@@ -57,7 +57,7 @@
       <ul class="show-div shopping-cart" *ngIf='!products.length'>
         <h5>Your cart is currently empty.</h5>
       </ul>
-      <ul class="show-div shopping-cart" *ngIf='products.length'>
+      <!--  <ul class="show-div shopping-cart" *ngIf='products.length'>
         <li *ngFor="let product of products">
         
           <div class="media">
@@ -76,22 +76,22 @@
               </h4>
             </div>
           </div>
-        <!--   <div class="close-circle" (click)="removeItem(product)">
+         <div class="close-circle" (click)="removeItem(product)">
             <a href="javascript:void(0)"><i class="fa fa-times" aria-hidden="true"></i></a>
-          </div> -->
-        </li>
-        <li>
+          </div> 
+        </li>-->
+        <!--  <li>
           <div class="total">
             <h5>subtotal : <span>{{ getTotal | async | currency:productService?.Currency.currency:'symbol' }}</span></h5>
           </div>
-        </li>
-        <li>
+        </li> -->
+       <!--   <li>
           <div class="buttons">
             <a [routerLink]="['/shop/cart']" class="view-cart">view cart</a>
             <a [routerLink]="['/shop/checkout']" class="checkout">checkout</a>
           </div>
-        </li>
-      </ul>
+        </li> 
+      </ul> -->
     </li>
   </ul>
 </div>

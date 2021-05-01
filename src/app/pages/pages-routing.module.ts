@@ -120,19 +120,12 @@ const routes: Routes = [
     component: FaqComponent 
   },
   { 
-    path: 'blog/left/sidebar', 
+    path: 'blog', 
     component: BlogLeftSidebarComponent 
   },
+  
   { 
-    path: 'blog/right/sidebar', 
-    component: BlogRightSidebarComponent 
-  },
-  { 
-    path: 'blog/no/sidebar', 
-    component: BlogNoSidebarComponent 
-  },
-  { 
-    path: 'blog/details/:slug',
+    path: 'blog/:slug',
     component: BlogDetailsComponent 
   },
   { 

@@ -24,68 +24,18 @@ import { Resolver } from '../shared/services/resolver.service';
 
 const routes: Routes = [
   {
-    path: 'product/left/sidebar/:slug',
+    path: 'product/:slug',
     component: ProductLeftSidebarComponent,
     resolve: {
       data: Resolver
     }
   },
   {
-    path: 'product/right/sidebar/:slug',
-    component: ProductRightSidebarComponent,
-    resolve: {
-      data: Resolver
-    }
-  },
-  {
-    path: 'product/no/sidebar/:slug',
-    component: ProductNoSidebarComponent,
-    resolve: {
-      data: Resolver
-    }
-  },
-  {
-    path: 'product/three/column/:slug',
-    component: ThreeColumnComponent,
-    resolve: {
-      data: Resolver
-    }
-  },
-  {
-    path: 'product/four/image/:slug',
-    component: FourImageComponent,
-    resolve: {
-      data: Resolver
-    }
-  },
-  {
-    path: 'product/bundle/:slug',
-    component: BundleProductComponent,
-    resolve: {
-      data: Resolver
-    }
-  },
-  {
-    path: 'product/image/outside/:slug',
-    component: ImageOutsideComponent,
-    resolve: {
-      data: Resolver
-    }
-  },
-  {
-    path: 'collection/left/sidebar',
+    path: '',
     component: CollectionLeftSidebarComponent
   },
   {
-    path: 'collection/right/sidebar',
-    component: CollectionRightSidebarComponent
-  },
-  {
-    path: 'collection/no/sidebar',
-    component: CollectionNoSidebarComponent
-  },
-  {
-    path: 'collection/infinitescroll',
+    path: '',
     component: CollectionInfinitescrollComponent
   },
   {

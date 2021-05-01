@@ -17,6 +17,7 @@ import { ShopComponent } from './shop/shop.component';
 import { PagesComponent } from './pages/pages.component';
 import { ElementsComponent } from './elements/elements.component';
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 
 // AoT requires an exported function for factories
@@ -51,7 +52,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         }
     }),
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ScullyLibModule
   ],
   providers: [
     {
