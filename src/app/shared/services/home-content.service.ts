@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ProductService } from './product.service';
+import { environment } from './../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class HomeContentService {
 
 private get content(): Observable<Home[]> {
 return this.Content = this.http.get<Home[]>
-  (`${this.productService.APIUrl}/api/v2/pages/?type=home.HomePage&fields=*`)
+  (`${environment.APIUrl}/api/v2/pages/?type=home.HomePage&fields=*`)
   .pipe(map(data => this.Content = data["items"]));
 }
 

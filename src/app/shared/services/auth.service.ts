@@ -1,11 +1,12 @@
 
-import { ProductService } from './product.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, tap } from 'rxjs/operators';
 import { BehaviorSubject, Subject, throwError } from 'rxjs';
 import { User } from '../classes/user.model';
 import { Router } from '@angular/router';
+import { environment } from './../../../environments/environment';
+
 
 
 interface AuthResponseData {
@@ -29,10 +30,10 @@ export class AuthService {
   private tokenExpirationTimer: any;
 
 
-  constructor(private http: HttpClient, private productService: ProductService , private router: Router) { }
+  constructor(private http: HttpClient , private router: Router) { }
 
   signup(email: string, password1: string, password2: string){
-   return this.http.post<AuthResponseData>(`${this.productService.APIUrl}/rest-auth/registration/`, {
+   return this.http.post<AuthResponseData>(`${environment.APIUrl}/rest-auth/registration/`, {
      email,
       password1,
       password2
@@ -54,7 +55,7 @@ export class AuthService {
   login( email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        `${this.productService.APIUrl}/rest-auth/login/`,
+        `${environment.APIUrl}/rest-auth/login/`,
         {
           email,
           password

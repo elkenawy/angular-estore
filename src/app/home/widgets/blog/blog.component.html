@@ -2,7 +2,7 @@
   <ng-container *ngFor="let blog of blogs">
     <ng-template carouselSlide>
       <div class="col-md-12">
-        <a [routerLink]="['/pages/blog/details/', blog.meta.slug]">
+        <a [routerLink]="['/blog/details/', blog.meta.slug]">
           <div class="classic-effect">
             <img [src]="blog.image.src" class="img-fluid" alt="blog">
             <span></span>
@@ -10,7 +10,7 @@
         </a>
         <div class="blog-details">
           <h4>{{blog.date_published | date: 'd MMMM y'}}</h4>
-          <a [routerLink]="['/pages/blog/details/', blog.meta.slug]">
+          <a [routerLink]="['/blog/details/', blog.meta.slug]">
             <p>{{blog.title}}</p>
           </a>
           <hr class="style1">

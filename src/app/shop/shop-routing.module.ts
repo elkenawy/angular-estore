@@ -30,18 +30,18 @@ const routes: Routes = [
       data: Resolver
     }
   },
-  {
-    path: '',
-    component: CollectionLeftSidebarComponent
-  },
+  // {
+  //   path: '',
+  //   component: CollectionLeftSidebarComponent
+  // },
   {
     path: '',
     component: CollectionInfinitescrollComponent
   },
-  {
-    path: 'cart',
-    component: CartComponent
-  },
+  // {
+  //   path: 'cart',
+  //   component: CartComponent
+  // },
   {
     path: 'wishlist',
     component: WishlistComponent
@@ -50,14 +50,6 @@ const routes: Routes = [
     path: 'compare',
     component: CompareComponent
   },
-  {
-    path: 'checkout',
-    component: CheckoutComponent
-  },
-  {
-    path: 'checkout/success/:id',
-    component: SuccessComponent
-  }
 ];
 
 @NgModule({

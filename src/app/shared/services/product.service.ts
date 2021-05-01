@@ -1,5 +1,4 @@
-import { Image } from '@ks89/angular-modal-gallery';
-import { Variants } from './../classes/product';
+import { environment } from './../../../environments/environment';
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -24,7 +23,7 @@ export class ProductService {
   public Currency = { name: 'Dollar', currency: 'USD', price: 1 } // Default Currency
   public OpenCart: boolean = false;
   public Products;
-  readonly APIUrl = 'http://localhost:8000';
+  
    window: Window & typeof globalThis;
 
 
@@ -42,18 +41,12 @@ export class ProductService {
   // Product
   private get products(): Observable<Product[]> {
     this.Products = this.http.get<Product[]>
-    (`${this.APIUrl}/api/v2/pages/?type=product.ProductDetailPage&fields=*`)
+    (`${environment.APIUrl}/api/v2/pages/?type=product.ProductDetailPage&fields=*`)
     .pipe(map(data => data["items"]));
     this.Products.subscribe(next => { localStorage['products'] = JSON.stringify(next) });
     return this.Products = this.Products.pipe(startWith(JSON.parse(localStorage['products'] || '[]')));
   }
 
-
-  // Get Snippet cart
-  // private get cart(): Observable<Product[]> {
-  //   this.Products = this.http.get<Product[]>
-  //   (`${this.APIUrl}/api/v2/pages/?type=product.ProductDetailPage&fields=*`)
-  //   .pipe(map(data => data["items"]));
 
   // Get Products
   public get getProducts(): Observable<Product[]> {
@@ -164,11 +157,7 @@ export class ProductService {
     const items = cartItem ? cartItem : product;
     const stock = this.calculateStockCounts(items, qty);
 
-    
 
-
-
-    
     if(!stock) return false
 
     if (cartItem) {
@@ -181,7 +170,7 @@ export class ProductService {
     }
 
     this.OpenCart = true; // If we use cart variation modal
-    localStorage.setItem("cartItems", JSON.stringify(state.cart));
+    // localStorage.setItem("cartItems", JSON.stringify(state.cart));
     return true;
   }
 
@@ -194,7 +183,7 @@ export class ProductService {
         if (qty !== 0 && stock) {
           state.cart[index].quantity = qty
         }
-        localStorage.setItem("cartItems", JSON.stringify(state.cart));
+        // localStorage.setItem("cartItems", JSON.stringify(state.cart));
         return true
       }
     })
@@ -204,10 +193,10 @@ export class ProductService {
   public calculateStockCounts(product, quantity) {
     const qty = product.quantity + quantity
     const stock = product.stock
-    if (stock < qty || stock == 0) {
-      this.toastrService.error('You can not add more items than available. In stock '+ stock +' items.');
-      return false
-    }
+    // if (stock < qty || stock == 0) {
+    //   this.toastrService.error('You can not add more items than available. In stock '+ stock +' items.');
+    //   return false
+    // }
     return true
   }
 
@@ -215,7 +204,7 @@ export class ProductService {
   public removeCartItem(product: Product): any {
     const index = state.cart.indexOf(product);
     state.cart.splice(index, 1);
-    localStorage.setItem("cartItems", JSON.stringify(state.cart));
+    // localStorage.setItem("cartItems", JSON.stringify(state.cart));
     return true
   }
 
@@ -240,7 +229,7 @@ export class ProductService {
 
   // Get Product Filter
   public filterProducts(filter: any): Observable<Product[]> {
-    return this.products.pipe(map(product => 
+    return this.products.pipe(map(product =>
       product.filter((item: Product) => {
         if (!filter.length) return true
         const Tags = filter.some((prev) => { // Match Tags

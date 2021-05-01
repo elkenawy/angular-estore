@@ -5,7 +5,7 @@
       <span class="lable4" *ngIf="product.sale">on sale</span>
     </div>
     <div class="front">
-      <a [routerLink]="['/shop/product/left/sidebar/', product.meta.slug]">
+      <a [routerLink]="['/shop/product/', product.meta.slug]">
         <img 
        
           [defaultImage]="ImageSrc ? ImageSrc : 'assets/images/product/placeholder.jpg'" 
@@ -15,7 +15,7 @@
       </a>
     </div>
     <div class="back" *ngIf="onHowerChangeImage">
-      <a [routerLink]="['/shop/product/left/sidebar/', product.meta.slug]">
+      <a [routerLink]="['/shop/product/', product.meta.slug]">
         <img 
          [src]="ImageSrc ? ImageSrc : product.variants[1].image['src']" class="img-fluid lazy-loading" alt="{{ product.variants[1].image['alt'] }}">
       </a>
@@ -48,7 +48,7 @@
   <div class="product-detail">
     <div>
       <bar-rating [rate]="5" [readOnly]="true"></bar-rating>
-      <a [routerLink]="['/shop/product/left/sidebar/', product.meta.slug]">
+      <a [routerLink]="['/shop/product/', product.meta.slug]">
         <h6>{{ product?.title | titlecase }}</h6>
       </a>
       <p>{{ product?.description }}</p>

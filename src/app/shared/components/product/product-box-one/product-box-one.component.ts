@@ -73,7 +73,7 @@ export class ProductBoxOneComponent implements OnInit {
         id: product.meta.slug,
         name: product.title,
         price: product.price,
-        url: `/shop/collection/left/sidebar/${product.meta.slug}`,
+        url: `/shop/product/${product.meta.slug}`,
         // url: product.detail_url,
         image : `${this.ImageSrc ? this.ImageSrc : product.variants[0].image.src} `,
         

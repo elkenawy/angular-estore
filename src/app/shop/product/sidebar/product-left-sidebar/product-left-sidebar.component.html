@@ -126,7 +126,7 @@
                         [attr.data-item-description]="product.description"
                         [attr.data-item-image]="product.variants[0].image.src"
                         [attr.data-item-name]="product.title"
-                        [attr.data-item-url]="['/shop/product/left/sidebar/'+product.meta.slug]"
+                        [attr.data-item-url]="['/shop/product/'+product.meta.slug]"
                        
                      
                      [class.disabled]="counter > product.stock" 

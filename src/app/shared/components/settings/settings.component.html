@@ -35,12 +35,12 @@
             <a href="javascript:void(0)" (click)="changeLanguage(language.code)">{{ language.name }}</a>
           </li>
         </ul>
-        <h6>currency</h6>
+        <!-- <h6>currency</h6>
         <ul class="list-inline">
           <li *ngFor="let currency of currencies">
             <a href="javascript:void(0)" (click)="changeCurrency(currency)">{{ currency.name }}</a>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </li>
     <li class="snipcart-checkout onhover-div mobile-cart">
@@ -54,9 +54,9 @@
       </div>
       
        <span class="snipcart-items-count cart_qty_cls">{{ products.length }}</span>
-      <ul class="show-div shopping-cart" *ngIf='!products.length'>
+      <!-- <ul class="show-div shopping-cart" *ngIf='!products.length'>
         <h5>Your cart is currently empty.</h5>
-      </ul>
+      </ul> -->
       <!--  <ul class="show-div shopping-cart" *ngIf='products.length'>
         <li *ngFor="let product of products">
         

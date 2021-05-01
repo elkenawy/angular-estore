@@ -5,6 +5,7 @@ import { map, startWith } from 'rxjs/operators';
 import { ProductService } from './product.service';
 import { Observable } from 'rxjs';
 import { ActivatedRouteSnapshot } from '@angular/router';
+import { environment } from './../../../environments/environment';
 
 const state = {
   blogs: JSON.parse(localStorage['blogs'] || '[]')
@@ -18,11 +19,11 @@ export class BlogService {
   public blog: Blog = {};
   router: any;
 
-  constructor(private http: HttpClient, private productService: ProductService) { }
+  constructor(private http: HttpClient) { }
 
 private get blogs(): Observable<Blog[]> {
 return this.Blog = this.http.get<Blog[]>
-  (`${this.productService.APIUrl}/api/v2/pages/?type=blog.BlogPage&fields=*`)
+  (`${environment.APIUrl}/api/v2/pages/?type=blog.BlogPage&fields=*`)
   .pipe(map(data => this.Blog = data["items"]));
 }
 

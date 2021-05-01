@@ -7,7 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { ToastrModule } from 'ngx-toastr';
-import { TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,14 +15,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShopComponent } from './shop/shop.component';
 import { PagesComponent } from './pages/pages.component';
-import { ElementsComponent } from './elements/elements.component';
+
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
-   return new TranslateHttpLoader(http, './assets/i18n/', ".json");
+   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -30,7 +30,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     ShopComponent,
     PagesComponent,
-    ElementsComponent
+    // ElementsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

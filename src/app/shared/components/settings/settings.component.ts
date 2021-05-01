@@ -57,6 +57,14 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.window['Snipcart'].api.cart.items);
+      this.translate.use(localStorage['lang']);
+    if (localStorage['lang'] === 'ar'){
+      document.body.classList.remove('ltr');
+      document.body.classList.add('rtl');
+    }else{
+       document.body.classList.remove('rtl');
+       document.body.classList.add('ltr');
+    }
     
   }
 
@@ -68,9 +76,10 @@ export class SettingsComponent implements OnInit {
     console.log(code);
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('lang', code);
-      window.location.reload();
       this.translate.use(code);
+    
     }
+    window.location.reload();
   }
 
   get getTotal(): Observable<number> {
