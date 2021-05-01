@@ -1,5 +1,5 @@
 {
-  "npmScope": "multikart",
+  "npmScope": "angular-estore",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
@@ -9,7 +9,7 @@
     "nx.json": "*"
   },
   "projects": {
-    "multikart": {
+    "angular-estore": {
       "tags": []
     }
   },

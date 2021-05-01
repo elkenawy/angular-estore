@@ -5,7 +5,7 @@ import { ScullyConfig } from '@scullyio/scully';
 
 export const config: ScullyConfig = {
   projectRoot: "./src",
-  projectName: "multikart",
+  projectName: "angular-estore",
   outDir: './dist/static',
   routes: {
     "/shop/product/:slug":{
