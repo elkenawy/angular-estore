@@ -2,6 +2,7 @@ import { AuthService } from './../../../shared/services/auth.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,8 @@ export class RegisterComponent implements OnInit {
 error: string = null;
 
 
-  constructor(private authService: AuthService) { }
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -37,6 +39,7 @@ onSubmit(form: NgForm) {
       resData => {
         console.log(resData);
         this.loader = false;
+        this.router.navigate(['/']);
       },
       errorMessage => {
        console.log(errorMessage);

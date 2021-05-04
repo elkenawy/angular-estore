@@ -15,14 +15,7 @@ import { BlogDetailsComponent } from './blog/blog-details/blog-details.component
 
 
 const routes: Routes = [
-  // { 
-  //   path: 'wishlist', 
-  //   component: WishlistComponent 
-  // },
-  // { 
-  //   path: 'cart', 
-  //   component: CartComponent 
-  // },
+
   { 
     path: 'login', 
     component: LoginComponent 

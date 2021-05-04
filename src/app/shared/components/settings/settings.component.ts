@@ -65,7 +65,7 @@ export class SettingsComponent implements OnInit {
        document.body.classList.remove('rtl');
        document.body.classList.add('ltr');
     }
-    
+
   }
 
   searchToggle(){

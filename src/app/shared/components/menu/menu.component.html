@@ -29,13 +29,13 @@
         </a>
         <!-- External Link -->
         <a href="{{ menuItem.path }}" class="nav-link" *ngIf="menuItem.type === 'extLink'">
-          {{ menuItem.title }}
+          {{ menuItem.title | translate }}
           <div class="lable-nav" *ngIf="menuItem.badge">{{ menuItem.badgeText | translate }}</div>
           <span class="sub-arrow" *ngIf="menuItem.children"></span>
         </a>
         <!-- External Tab Link -->
         <a href="{{ menuItem.path }}" class="nav-link" *ngIf="menuItem.type === 'extTabLink'">
-          {{ menuItem.title }}
+          {{ menuItem.title  | translate }}
           <div class="lable-nav" *ngIf="menuItem.badge">{{ menuItem.badgeText | translate }}</div>
           <span class="sub-arrow" *ngIf="menuItem.children"></span>
         </a>
